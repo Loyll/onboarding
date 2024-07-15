@@ -162,10 +162,10 @@ nice -n -5 "$tempdir/onboarding_scripts/1-installSwiftDialog.zsh" &
 START=$(date +%s)
 
 echo -n "$(date) | Waiting for Swift Dialog to Start..."
-# Loop for 5 minutes (300 seconds)
+# Loop for 10 minutes (600 seconds)
 until ps aux | grep /usr/local/bin/dialog | grep -v grep &>/dev/null; do
     # Check if the 5 minutes have passed
-    if [[ $(($(date +%s) - $START)) -ge 300 ]]; then
+    if [[ $(($(date +%s) - $START)) -ge 600 ]]; then
         echo "$(date) | Failed: Swift Dialog did not start within 5 minutes"
         exit 1
     fi
